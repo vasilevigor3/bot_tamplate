@@ -1,10 +1,11 @@
 from environs import Env
 
-# Теперь используем вместо библиотеки python-dotenv библиотеку environs
 env = Env()
 env.read_env()
 
-BOT_TOKEN = env.str("BOT_TOKEN")  # Забираем значение типа str
-ADMINS = env.list("ADMINS")  # Тут у нас будет список из админов
-IP = env.str("ip")  # Тоже str, но для айпи адреса хоста
+BOT_TOKEN = env.str("BOT_TOKEN")
 
+db_root_pass = env.str("MYSQL_ROOT_PASSWORD")
+db_port = env.int("port")
+db_host = env.str("host")
+database_name = env.str("database_name")
